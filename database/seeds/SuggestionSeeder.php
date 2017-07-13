@@ -12,9 +12,11 @@ class SuggestionSeeder extends Seeder
     public function run()
     {
         $suggestion = new \App\Models\Suggestion();
-        $suggestion->category    = '';
-        $suggestion->description = '';
+        $suggestion->category    = 'random';
+        $suggestion->description = 'long walk on the beach';
         $suggestion->save();
+
+        
 
     }
 }

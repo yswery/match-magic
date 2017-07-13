@@ -8,7 +8,7 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/app.css" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="css/app.css"/>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">

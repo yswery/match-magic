@@ -27,5 +27,5 @@ Route::get('/upload-receipt', function () {
 Route::post('/upload-receipt', function () {
     $file = \Illuminate\Support\Facades\Request::file('receipt');
     $slack = new \App\Services\Slack();
-    return json_encode($slack->sendReceipt('@yif', $file));
+    return json_encode($slack->sendReceipt('@hanna', $file));
 });

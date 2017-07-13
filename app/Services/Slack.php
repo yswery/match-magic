@@ -12,7 +12,7 @@ class Slack
         $this->token = env('SLACK_BOT_TOKEN');
     }
 
-    private function doCurl($url, $postData)
+    private function doCurl($url, $postData, $headers = [])
     {
         $postData['token'] = $this->token;
         $postData['as_user'] = 'true';
@@ -20,8 +20,13 @@ class Slack
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        if (empty($headers) !== true) {
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        }
+
         $server_output = curl_exec($ch);
 
         curl_close($ch);
@@ -51,5 +56,17 @@ class Slack
         // Send the message
         $apiUrl = 'https://slack.com/api/chat.postMessage';
         return json_decode($this->doCurl($apiUrl, ['channel' => $channel, 'text' => $message]));
+    }
+
+    public function sendReceipt($person, $file)
+    {
+        $apiUrl = 'https://slack.com/api/files.upload';
+        return json_decode($this->doCurl($apiUrl, [
+            'channels' => $person,
+            'filename' => $file->getClientOriginalName(),
+            'file' => new \CURLFile($file->getPathname()),
+            'title' => 'Another date receipt, from Cupid with love <3',
+        ]));
+
     }
 }

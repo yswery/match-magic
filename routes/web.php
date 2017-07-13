@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/upload-receipt', function () {
@@ -25,3 +25,27 @@ Route::get('/upload-receipt', function () {
 
 
 Route::post('/upload-receipt', ['name' => 'upload.receipt', 'uses' => 'UploadController@uploadReceipt']);
+
+Route::get('/memories', function () {
+    return view('upload', [
+        'type' => 'memories'
+    ]);
+});
+
+Route::get('/receipt', function () {
+    return view('upload', [
+        'type' => 'receipt'
+    ]);
+});
+
+Route::get('/activities', function () {
+    return view('activities');
+});
+
+Route::get('/thank-you', function () {
+    return view('thank-you');
+});
+
+Route::get('/activity/{slug}', function () {
+    return view('activity-detail');
+});

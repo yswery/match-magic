@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \App\Console\Commands\pickPairs::class,
         \App\Console\Commands\hypeHype::class,
+        \App\Console\Commands\reminder::class,
     ];
 
     /**

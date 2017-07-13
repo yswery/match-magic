@@ -50,12 +50,15 @@ class pickPairs extends Command
 
         // Send notifications on slack for the private people with suggestions?
         foreach ($pairs as $pair) {
-            $slack->sendPrivateMessage($pair, view('slack-messages.private-dm')->with('pair', $pair));
+            // $slack->sendPrivateMessage($pair, view('slack-messages.private-dm')->with('pair', $pair));
         }
+
+        $upcomingIds = Pool::limit(3)->pluck('member_id')->toArray();
+        $membersToDate = Member::whereIn('id', $upcomingIds)->get();
 
         // Post a message on channel on slack
         ### TO DO, CHANGE TO ANNOUNCEMENTS and use template
-        //dump($slack->sendToChannel('#matchmagic', 'a few people been slected: ' . print_r($pairs[0]->toArray(), true) . print_r($pairs[1]->toArray(), true)));
+        $slack->sendToChannel('#matchmagic', view('slack-messages.pair-announce')->with('pairs', $pairs)->with('membersToDate', $membersToDate));
 
 
 

@@ -9,7 +9,7 @@ class Pool extends Model
     protected $table = 'selection_pool';
     protected $fillable = ['member_id'];
 
-    public function createPair($pairCount = 3)
+    public function createPairs($pairCount = 3)
     {
         $pairs = collect();
 

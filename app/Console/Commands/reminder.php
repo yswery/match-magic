@@ -2,23 +2,25 @@
 
 namespace App\Console\Commands;
 
+use App\Models\HistoricPair;
+use App\Models\Member;
 use App\Services\Slack;
 use Illuminate\Console\Command;
 
-class hypeHype extends Command
+class reminder extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'zMatchMagic:hype-hype';
+    protected $signature = 'zMatchMagic:reminder';
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create some hype on slack';
+    protected $description = 'Remind the last set of dated to go out';
 
     /**
      * Create a new command instance.
@@ -39,7 +41,16 @@ class hypeHype extends Command
     {
         $slack = new Slack();
 
+        $pairs = HistoricPair::limit(3)->orderBy('created_at', 'ASC')->get();
 
-        $slack->sendToChannel('#matchmagic', view('slack-messages.hype'));
+
+        // ##### TO REMOVE THIS LINE
+        $pairs = [Member::where('name', 'Hanna.S')->orWhere('name', 'Yif.S')->get(), Member::where('name', 'Shane.M')->orWhere('name', 'Dan.O')->get()];
+
+
+        // Send notifications on slack for the private people with suggestions?
+        foreach ($pairs as $pair) {
+            $slack->sendPrivateMessage($pair, view('slack-messages.reminder'));
+        }
     }
 }

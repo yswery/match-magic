@@ -4,11 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Member extends Model
+class Memory extends Model
 {
-    protected $table = 'members';
-
-    protected $casts = [
-        'active' => 'boolean',
-    ];
+    protected $table = 'memories';
+    
 }

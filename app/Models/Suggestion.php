@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Memory extends Model
+class Suggestion extends Model
 {
-    protected $table = 'memories';
+    protected $table = 'suggestions';
 
 }

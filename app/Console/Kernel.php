@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        \App\Console\Commands\pickPairs::class,
+        \App\Console\Commands\hypeHype::class,
     ];
 
     /**

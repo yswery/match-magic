@@ -24,8 +24,4 @@ Route::get('/upload-receipt', function () {
 });
 
 
-Route::post('/upload-receipt', function () {
-    $file = \Illuminate\Support\Facades\Request::file('receipt');
-    $slack = new \App\Services\Slack();
-    return json_encode($slack->sendReceipt('@hanna', $file));
-});
+Route::post('/upload-receipt', ['name' => 'upload.receipt', 'uses' => 'UploadController@uploadReceipt']);

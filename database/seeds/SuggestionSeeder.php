@@ -11,21 +11,10 @@ class SuggestionSeeder extends Seeder
      */
     public function run()
     {
-        $catagories = [
-            'activity',
-            'food',
-            'random',
-        ];
+        $suggestion = new \App\Models\Suggestion();
+        $suggestion->category    = '';
+        $suggestion->description = '';
+        $suggestion->save();
 
-        $faker = Faker\Factory::create();
-
-        foreach (range(1, 50) as $index) {
-            $suggestion = new \App\Models\Suggestion();
-
-            $suggestion->category    = $catagories[rand(0, 2)];
-            $suggestion->description = $faker->paragraph;
-
-            $suggestion->save();
-        }
     }
 }

@@ -41,7 +41,7 @@ class reminder extends Command
     {
         $slack = new Slack();
 
-        $pairs = HistoricPair::limit(3)->orderBy('created_at', 'ASC')->get();
+        $pairs = HistoricPair::limit(3)->orderBy('created_at', 'DESC')->get();
 
 
         // ##### TO REMOVE THIS LINE

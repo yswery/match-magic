@@ -19,42 +19,11 @@
         <div class="text-block-center">
             <h2>Our happy matches</h2>
             <div class="collage">
-                <a>
-                    <div class="collage-block portrait"></div>
-                </a>
-                <a>
-                    <div class="collage-block landscape"></div>
-                </a>
-                <a>
-                    <div class="collage-block portrait"></div>
-                </a>
-                <a>
-                    <div class="collage-block landscape"></div>
-                </a>
-                <a>
-                    <div class="collage-block portrait"></div>
-                </a>
-                <a>
-                    <div class="collage-block landscape"></div>
-                </a>
-                <a>
-                    <div class="collage-block portrait"></div>
-                </a>
-                <a>
-                    <div class="collage-block landscape"></div>
-                </a>
-                <a>
-                    <div class="collage-block portrait"></div>
-                </a>
-                <a>
-                    <div class="collage-block landscape"></div>
-                </a>
-                <a>
-                    <div class="collage-block portrait"></div>
-                </a>
-                <a>
-                    <div class="collage-block landscape"></div>
-                </a>
+                @foreach($memories as $memory)
+                    <a>
+                        <div class="collage-block" style="background-image: url('{{ $memory->image }}');"></div>
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>

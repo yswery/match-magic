@@ -11,9 +11,6 @@
 |
  */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+Route::get('/', ['name' => 'home', 'uses' => 'HomeController@home']);
 Route::post('/upload-receipt', ['name' => 'upload.receipt', 'uses' => 'UploadController@uploadReceipt']);
 Route::post('/upload-memories', ['name' => 'upload.memories', 'uses' => 'UploadController@uploadMemory']);

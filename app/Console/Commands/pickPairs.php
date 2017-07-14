@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Member;
 use App\Models\Pool;
+use App\Models\Suggestion;
 use App\Services\Slack;
 use Illuminate\Console\Command;
 
@@ -50,17 +51,21 @@ class pickPairs extends Command
 
         // Send notifications on slack for the private people with suggestions?
         foreach ($pairs as $pair) {
-            // $slack->sendPrivateMessage($pair, view('slack-messages.private-dm')->with('pair', $pair));
+            $suggestions = [
+                'food'     => Suggestion::where('category', 'food')->inRandomOrder()->first(),
+                'activity' => Suggestion::where('category', 'activity')->inRandomOrder()->limit(1)->first(),
+                'random'   => Suggestion::where('category', 'random')->inRandomOrder()->limit(1)->first(),
+            ];
+
+            $slack->sendPrivateMessage($pair, view('slack-messages.private-dm')->with('pair', $pair)->with($suggestions));
         }
 
-        $upcomingIds = Pool::limit(3)->pluck('member_id')->toArray();
+        $upcomingIds   = Pool::limit(3)->pluck('member_id')->toArray();
         $membersToDate = Member::whereIn('id', $upcomingIds)->get();
 
         // Post a message on channel on slack
         ### TO DO, CHANGE TO ANNOUNCEMENTS and use template
-        $slack->sendToChannel('#matchmagic', view('slack-messages.pair-announce')->with('pairs', $pairs)->with('membersToDate', $membersToDate));
-
-
+        // $slack->sendToChannel('#matchmagic', view('slack-messages.pair-announce')->with('pairs', $pairs)->with('membersToDate', $membersToDate));
 
     }
 }

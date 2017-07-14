@@ -44,7 +44,8 @@
                     <h3>Upload a date</h3>
                     <input type="file" name="image" id="image" class="input-file">
                     <label for="image">Choose a file</label>
-                    <p>Comment: </p><input type="text" name="comment" class="textfield"><br>
+                    <p>Comment: </p>
+                    <textarea name="comment" rows="3" class="textfield"></textarea><br>
                     <input type="submit" value="Submit" class="button">
                 </form>
             </div>

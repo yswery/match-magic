@@ -79,10 +79,9 @@
                 </form>
             </div>
             <div class="form form2">
-                <form action="/upload-receipt" method="post">
+                <form action="/upload-receipt" method="POST" enctype="multipart/form-data">
                     <h3>Upload a receipt</h3>
                     Choose an image: <input type="file" name="receipt" id="receipt">
-                    Comment: <input type="text" name="comment" class="textfield"><br>
                     <input type="submit" value="Submit" class="button">
                 </form>
             </div>

@@ -81,7 +81,7 @@
             <div class="form form2">
                 <form action="/upload-receipt" method="POST" enctype="multipart/form-data">
                     <h3>Upload a receipt</h3>
-                    Choose an image: <input type="file" name="receipt" id="receipt">
+                    Choose an image: <input type="file" name="receipt" id="receipt" class="file">
                     <input type="submit" value="Submit" class="button">
                 </form>
             </div>

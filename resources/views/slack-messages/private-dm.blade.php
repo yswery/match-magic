@@ -20,6 +20,8 @@ $gifs = [
     'https://media.giphy.com/media/tEQVq5ASc6CcM/giphy.gif',
     'https://media.giphy.com/media/l2JeiriCSbb5G5m6s/giphy.gif',
     'https://media.giphy.com/media/3oKIP6w9AnIcjIre5a/giphy.gif',
+    'https://media4.giphy.com/media/3o6gaT5SkG1ptQCGSk/giphy.gif',
+    'https://media4.giphy.com/media/xT8qB51gOXXek213m8/giphy.gif',
 ];
 ?>
 {{  $gifs[array_rand($gifs)] }}

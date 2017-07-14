@@ -57,8 +57,8 @@ class pickPairs extends Command
         foreach ($pairs as $pair) {
             $suggestions = [
                 'food'     => Suggestion::where('category', 'food')->inRandomOrder()->first(),
-                'activity' => Suggestion::where('category', 'activity')->inRandomOrder()->limit(1)->first(),
-                'random'   => Suggestion::where('category', 'random')->inRandomOrder()->limit(1)->first(),
+                'activity' => Suggestion::where('category', 'activity')->inRandomOrder()->first(),
+                'random'   => Suggestion::where('category', 'random')->inRandomOrder()->first(),
             ];
 
             $slack->sendPrivateMessage($pair, view('slack-messages.private-dm')->with('pair', $pair)->with($suggestions));

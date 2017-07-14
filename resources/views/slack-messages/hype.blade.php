@@ -9,6 +9,7 @@ $gifs = [
     'https://media.giphy.com/media/l0IyfV1P1aDJxcO5O/giphy.gif',
     'https://media.giphy.com/media/MgfkcrnhT7dXG/giphy.gif',
     'https://media.giphy.com/media/3o7abKGM3Xa70I7jCU/giphy.gif',
+    'https://media3.giphy.com/media/hTh9bSbUPWMWk/giphy.gif',
 ];
 ?>
 

@@ -42,15 +42,16 @@
             <div class="form form1">
                 <form action="/upload-memories" method="POST" enctype="multipart/form-data">
                     <h3>Upload a date</h3>
-                    Choose an image: <input type="file" name="image" id="image" class="file"><br />
-                    Comment: <input type="text" name="comment" class="textfield"><br>
+                    <input type="button" value="Choose an image" name="choose" class="button"><br>
+                    <p>Comment: </p><input type="text" name="comment" class="textfield"><br>
                     <input type="submit" value="Submit" class="button">
                 </form>
             </div>
             <div class="form form2">
                 <form action="/upload-receipt" method="POST" enctype="multipart/form-data">
                     <h3>Upload a receipt</h3>
-                    Choose an image: <input type="file" name="receipt" id="receipt" class="file">
+                    <input type="file" name="receipt" id="receipt" class="input-file">
+                    <label for="receipt">Choose a file</label>
                     <input type="submit" value="Submit" class="button">
                 </form>
             </div>

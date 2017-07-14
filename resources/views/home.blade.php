@@ -42,7 +42,8 @@
             <div class="form form1">
                 <form action="/upload-memories" method="POST" enctype="multipart/form-data">
                     <h3>Upload a date</h3>
-                    <input type="button" value="Choose an image" name="choose" class="button"><br>
+                    <input type="file" name="image" id="image" class="input-file">
+                    <label for="image">Choose a file</label>
                     <p>Comment: </p><input type="text" name="comment" class="textfield"><br>
                     <input type="submit" value="Submit" class="button">
                 </form>

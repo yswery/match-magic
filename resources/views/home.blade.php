@@ -10,9 +10,7 @@
         </div>
         <div class="fullscreen-bg">
             <video loop muted autoplay poster="images/videoframe.jpg" class="fullscreen-bg__video">
-                {{--<source src="video/background-video.webm" type="video/webm">--}}
                 <source src="video/background-video.mp4" type="video/mp4">
-                {{--<source src="video/background-video.ogv" type="video/ogg">--}}
             </video>
         </div>
 
@@ -73,16 +71,20 @@
     <div id="section4" class="section" name="section4">
         <div class="text-block-center">
             <div class="form form1">
-                <h3>Upload a date</h3>
-                Choose an image: <input type="button" value="Choose" name="choose" class="button"><br>
-                Comment: <input type="text" name="comment" class="textfield"><br>
-                <input type="submit" value="Submit" class="button">
+                <form action="">
+                    <h3>Upload a date</h3>
+                    Choose an image: <input type="button" value="Choose" name="choose" class="button"><br>
+                    Comment: <input type="text" name="comment" class="textfield"><br>
+                    <input type="submit" value="Submit" class="button">
+                </form>
             </div>
             <div class="form form2">
-                <h3>Upload a receipt</h3>
-                Choose an image: <input type="button" value="Choose" name="choose" class="button"><br>
-                Comment: <input type="text" name="comment" class="textfield"><br>
-                <input type="submit" value="Submit" class="button">
+                <form action="/upload-receipt" method="post">
+                    <h3>Upload a receipt</h3>
+                    Choose an image: <input type="file" name="receipt" id="receipt">
+                    Comment: <input type="text" name="comment" class="textfield"><br>
+                    <input type="submit" value="Submit" class="button">
+                </form>
             </div>
         </div>
     </div>

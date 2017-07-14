@@ -15,15 +15,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/upload-receipt', function () {
-    // #### THIS GET ENDPOINT WILL NOT EXIST LATER, Should be replaced byt the single page application and only post used
-    return '<form action="/upload-receipt" method="POST" enctype="multipart/form-data">
-              <input type="file" name="receipt" id="receipt">
-              <input type="submit" value="Submit">
-            </form>';
-});
-
-
 Route::post('/upload-receipt', ['name' => 'upload.receipt', 'uses' => 'UploadController@uploadReceipt']);
 
 Route::get('/memories', function () {

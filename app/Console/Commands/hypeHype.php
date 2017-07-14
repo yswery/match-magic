@@ -40,6 +40,6 @@ class hypeHype extends Command
         $slack = new Slack();
 
 
-        $slack->sendToChannel('#matchmagic', view('slack-messages.hype'));
+        $slack->sendToChannel('#announcements', view('slack-messages.hype'));
     }
 }

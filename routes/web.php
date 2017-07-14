@@ -16,11 +16,4 @@ Route::get('/', function () {
 });
 
 Route::post('/upload-receipt', ['name' => 'upload.receipt', 'uses' => 'UploadController@uploadReceipt']);
-
-Route::post('/upload-images', ['name' => 'upload.images', 'uses' => 'UploadController@uploadImages']);
-
-Route::get('/memories', function () {
-    return view('upload', [
-        'type' => 'memories'
-    ]);
-});
+Route::post('/upload-memories', ['name' => 'upload.memories', 'uses' => 'UploadController@uploadMemory']);

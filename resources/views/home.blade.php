@@ -71,7 +71,7 @@
     <div id="section4" class="section" name="section4">
         <div class="text-block-center">
             <div class="form form1">
-                <form action="">
+                <form action="/upload-memories" method="POST" enctype="multipart/form-data">
                     <h3>Upload a date</h3>
                     <input type="button" value="Choose an image" name="choose" class="button"><br>
                     <p>Comment: </p><input type="text" name="comment" class="textfield"><br>
@@ -79,7 +79,7 @@
                 </form>
             </div>
             <div class="form form2">
-                <form action="/upload-receipt" method="post">
+                <form action="/upload-receipt" method="POST" enctype="multipart/form-data">
                     <h3>Upload a receipt</h3>
                     <input type="file" name="receipt" id="receipt" class="input-file">
                     <label for="receipt">Choose a file</label>

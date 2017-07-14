@@ -20,14 +20,15 @@ class UploadController extends Controller
     public function uploadMemory(Request $request)
     {
         $image = $request->file('image');
-        $text  = $request->input('text');
+        $text  = $request->input('comment');
 
         // save the image to disk
-        $imageName = '/images/' . time() . '.' . pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
-        $image->move(public_path() . $imageName);
+        $imageName = time() . '.' . pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
+        $folder    = '/images/date-images/';
+        $image->move(public_path() . $folder, $imageName);
 
         $memory              = new Memory;
-        $memory->image       = $imageName;
+        $memory->image       = $folder . $imageName;
         $memory->description = $text;
         $memory->save();
 

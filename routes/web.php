@@ -17,26 +17,10 @@ Route::get('/', function () {
 
 Route::post('/upload-receipt', ['name' => 'upload.receipt', 'uses' => 'UploadController@uploadReceipt']);
 
+Route::post('/upload-images', ['name' => 'upload.images', 'uses' => 'UploadController@uploadImages']);
+
 Route::get('/memories', function () {
     return view('upload', [
         'type' => 'memories'
     ]);
-});
-
-Route::get('/receipt', function () {
-    return view('upload', [
-        'type' => 'receipt'
-    ]);
-});
-
-Route::get('/activities', function () {
-    return view('activities');
-});
-
-Route::get('/thank-you', function () {
-    return view('thank-you');
-});
-
-Route::get('/activity/{slug}', function () {
-    return view('activity-detail');
 });

@@ -81,8 +81,7 @@
             <div class="form form2">
                 <form action="/upload-receipt" method="post">
                     <h3>Upload a receipt</h3>
-                    Choose an image: <input type="file" name="receipt" id="receipt">
-                    Comment: <input type="text" name="comment" class="textfield"><br>
+                    Choose an image: <input type="file" name="receipt" id="receipt" class="file">
                     <input type="submit" value="Submit" class="button">
                 </form>
             </div>

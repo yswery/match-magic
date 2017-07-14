@@ -71,9 +71,9 @@
     <div id="section4" class="section" name="section4">
         <div class="text-block-center">
             <div class="form form1">
-                <form action="">
+                <form action="/upload-memories" method="POST" enctype="multipart/form-data">
                     <h3>Upload a date</h3>
-                    Choose an image: <input type="button" value="Choose" name="choose" class="button"><br>
+                    Choose an image: <input type="file" name="image" id="image" class="file"><br />
                     Comment: <input type="text" name="comment" class="textfield"><br>
                     <input type="submit" value="Submit" class="button">
                 </form>

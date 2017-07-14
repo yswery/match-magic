@@ -47,7 +47,11 @@ class pickPairs extends Command
         $pairs = $pool->createPairs();
 
         // ##### TO REMOVE THIS LINE
-        $pairs = [Member::where('name', 'Hanna.S')->orWhere('name', 'Dan.O')->get(), Member::where('name', 'Shane.M')->orWhere('name', 'Yif.S')->get()];
+        $pairs = [
+            Member::where('name', 'Hanna.S')->orWhere('name', 'Josh.P')->get(),
+            Member::where('name', 'Jess.F')->orWhere('name', 'Tito.C')->get(),
+            Member::where('name', 'Tia.A')->orWhere('name', 'Wouter.P')->get(),
+        ];
 
         // Send notifications on slack for the private people with suggestions?
         foreach ($pairs as $pair) {
@@ -64,8 +68,7 @@ class pickPairs extends Command
         $membersToDate = Member::whereIn('id', $upcomingIds)->get();
 
         // Post a message on channel on slack
-        ### TO DO, CHANGE TO ANNOUNCEMENTS and use template
-        // $slack->sendToChannel('#matchmagic', view('slack-messages.pair-announce')->with('pairs', $pairs)->with('membersToDate', $membersToDate));
+        $slack->sendToChannel('#announcements', view('slack-messages.pair-announce')->with('pairs', $pairs)->with('membersToDate', $membersToDate));
 
     }
 }

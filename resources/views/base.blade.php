@@ -18,6 +18,11 @@
 
     <script>
         $(document).ready(function () {
+
+            $(".boxToggle").click(function () {
+                $(this).find(".thumbnail").toggleClass('largeWidth');
+            });
+
             // Add smooth scrolling to all links
             $("a").on('click', function (event) {
 

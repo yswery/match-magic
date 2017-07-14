@@ -20,8 +20,8 @@
             <h2>Our happy matches</h2>
             <div class="collage">
                 @foreach($memories as $memory)
-                    <a>
-                        <div class="collage-block" style="background-image: url('{{ $memory->image }}');"></div>
+                    <a class="boxToggle">
+                        <div class="thumbnail" style="background-image: url('{{ $memory->image }}');"></div>
                     </a>
                 @endforeach
             </div>

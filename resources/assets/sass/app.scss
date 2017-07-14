@@ -77,12 +77,46 @@ p {
     padding: 0 10%;
 }
 
+.thumbnail {
+    display:block;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    margin: 8px;
+    border: none;
+    border-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: width 0.1s ease-in, height 0.1s ease-in;
+}
+
+.largeWidth {
+    width:80vw;
+    height: 40vw;
+    display: block;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    top: 100px;
+    z-index:10;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.18);
+}
+
+.boxToggle {
+    cursor: pointer;
+    display: inline-flex;
+}
+
+
 .collage-block {
     width: 140px;
     height: 140px;
     display: inline-flex;
     overflow: hidden;
-    padding: 10px;
     margin: 8px;
     border: none;
     border-color: transparent;
@@ -90,8 +124,7 @@ p {
     background-repeat: no-repeat;
 }
 
-.collage-block:hover {
-    padding: 10px;
+.thumbnail:hover {
     border: none;
     -moz-transition: all .1s ease;
     -o-transition: all .1s ease;

@@ -46,13 +46,6 @@ class pickPairs extends Command
 
         $pairs = $pool->createPairs();
 
-        // ##### TO REMOVE THIS LINE
-        $pairs = [
-            Member::where('name', 'Hanna.S')->orWhere('name', 'Josh.P')->get(),
-            Member::where('name', 'Jess.F')->orWhere('name', 'Tito.C')->get(),
-            Member::where('name', 'Tia.A')->orWhere('name', 'Wouter.P')->get(),
-        ];
-
         // Send notifications on slack for the private people with suggestions?
         foreach ($pairs as $pair) {
             $suggestions = [

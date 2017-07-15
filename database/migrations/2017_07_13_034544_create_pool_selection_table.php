@@ -18,6 +18,12 @@ class CreatePoolSelectionTable extends Migration
             $table->integer('member_id')->index();
             $table->timestamps();
         });
+
+        foreach (\App\Models\Member::all() as $member) {
+            $pool = new \App\Models\Pool;
+            $pool->member_id = $member->id;
+            $pool->save();
+        }
     }
 
     /**

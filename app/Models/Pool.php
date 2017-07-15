@@ -26,7 +26,7 @@ class Pool extends Model
 
             }
 
-            $availableMembers->shuffle();
+            $availableMembers = $availableMembers->shuffle();
             $member1 = $availableMembers->pop();
             $this->find($member1->id)->delete();
 

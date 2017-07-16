@@ -58,7 +58,7 @@ class pickPairs extends Command
         }
 
         $upcomingIds   = Pool::limit(3)->pluck('member_id')->toArray();
-        $membersToDate = Member::whereIn('id', $upcomingIds)->get();
+        $membersToDate = Member::whereIn('id', $upcomingIds)->get()->shuffle();
 
         // Post a message on channel on slack
         $slack->sendToChannel('#announcements', view('slack-messages.pair-announce')->with('pairs', $pairs)->with('membersToDate', $membersToDate));

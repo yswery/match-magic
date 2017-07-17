@@ -1,13 +1,6 @@
 Hey guys, congrats! You have both been selected to go have some fun!! :panda_face:
 
 Let’s get this booked in. What are your availabilities for this week?
-Stuck for ideas? Reminisce on past memories here: https://matchmagic.co.nz/
-
-*Here’s some suggestions:*
-- *Food:* {{ $food->description }}
-- *Activity:* {{ $activity->description }}
-- *Random:* {{ $random->description }}
-
 
 _When you have your romantic date, we would love it if you would share your memories here_: https://matchmagic.co.nz/
 
@@ -25,4 +18,3 @@ $gifs = [
 ];
 ?>
 {{  $gifs[array_rand($gifs)] }}
-

@@ -54,11 +54,12 @@ class pickPairs extends Command
                 'random'   => Suggestion::where('category', 'random')->inRandomOrder()->first(),
             ];
 
-            $slack->sendPrivateMessage($pair, view('slack-messages.private-dm')->with('pair', $pair)->with($suggestions));
+            $slack->sendPrivateMessage($pair, view('slack-messages.private-dm')->with('pair', $pair));
+            $slack->sendPrivateMessage($pair, view('slack-messages.private-dm-suggestions')->with($suggestions));
         }
 
-        $upcomingIds   = Pool::limit(3)->pluck('member_id')->toArray();
-        $membersToDate = Member::whereIn('id', $upcomingIds)->get()->shuffle();
+        $upcomingIds   = Pool::inRandomOrder()->limit(3)->pluck('member_id')->toArray();
+        $membersToDate = Member::whereIn('id', $upcomingIds)->get();
 
         // Post a message on channel on slack
         $slack->sendToChannel('#announcements', view('slack-messages.pair-announce')->with('pairs', $pairs)->with('membersToDate', $membersToDate));

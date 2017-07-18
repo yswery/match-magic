@@ -41,11 +41,12 @@ class reminder extends Command
     {
         $slack = new Slack();
 
-        $pairs = HistoricPair::limit(3)->orderBy('created_at', 'DESC')->get();
+        $historicPairs = HistoricPair::limit(3)->orderBy('created_at', 'DESC')->get();
 
         // Send notifications on slack for the private people with suggestions?
-        foreach ($pairs as $pair) {
-            $slack->sendPrivateMessage($pair, view('slack-messages.reminder'));
+        foreach ($historicPairs as $historicPair) {
+            $pairs = Member::where('id', $historicPair->member_id_1)->orWhere('id', $historicPair->member_id_2)->get();
+            $slack->sendPrivateMessage($pairs, view('slack-messages.reminder'));
         }
     }
 }

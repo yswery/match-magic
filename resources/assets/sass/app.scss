@@ -2,10 +2,10 @@
 /* CSS Document */
 
 body {
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
     font-family: "Varela Round", Helvetica, Arial, sans-serif;
 }
 
@@ -45,7 +45,6 @@ p {
 #logo {
     display: inline-block;
     top: 16px;
-    /*	width: 110px;*/
     width: 170px;
     position: relative;
     padding-left: 32px;
@@ -71,9 +70,7 @@ p {
 }
 
 .collage {
-    /*	 transform: skewY(3deg);*/
     margin: auto 0;
-    /* width: 960px; */
     padding: 0 10%;
 }
 
@@ -84,7 +81,6 @@ p {
     overflow: hidden;
     margin: 8px;
     border: none;
-    border-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
     transition: width 0.1s ease-in, height 0.1s ease-in;
@@ -103,7 +99,7 @@ p {
     margin: 0 auto;
     left: 0;
     right: 0;
-    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.18);
 }
 
 .boxToggle {
@@ -129,7 +125,7 @@ p {
     -moz-transition: all .1s ease;
     -o-transition: all .1s ease;
     -webkit-transition: all .1s ease;
-    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.18);
 
 }
 
@@ -145,7 +141,7 @@ p {
     width: 100%;
     height: 70px;
     padding-top: 4px;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.18);
     top: 0;
 }
 
@@ -179,8 +175,6 @@ p {
     transform: skewY(0deg);
     z-index: -10;
     position: relative;
-    /* top: -40px; */
-    /* bottom: 40px; */
     height: 300px;
     overflow: hidden;
     margin-top: -50px;
@@ -205,7 +199,7 @@ p {
     overflow: hidden;
     margin: 12px;
     padding: 60px;
-    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.18);
 }
 
 input {

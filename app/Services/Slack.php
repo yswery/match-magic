@@ -14,8 +14,9 @@ class Slack
 
     private function doCurl($url, $postData, $headers = [])
     {
-        $postData['token'] = $this->token;
-        $postData['as_user'] = 'true';
+        $postData['token']        = $this->token;
+        $postData['as_user']      = 'true';
+        $postData['unfurl_links'] = 'false';
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -48,7 +49,7 @@ class Slack
         $userSlackIds = implode(',', $userSlackIds);
 
         $response = json_decode($this->doCurl($apiUrl, ['users' => $userSlackIds]));
-        $groupId = $response->group->id;
+        $groupId  = $response->group->id;
 
         return $this->sendToChannel($groupId, $message);
     }
@@ -66,8 +67,8 @@ class Slack
         return json_decode($this->doCurl($apiUrl, [
             'channels' => $person,
             'filename' => $file->getClientOriginalName(),
-            'file' => new \CURLFile($file->getPathname()),
-            'title' => 'Another date receipt, from Cupid with love <3',
+            'file'     => new \CURLFile($file->getPathname()),
+            'title'    => 'Another date receipt, from Cupid with love <3',
         ]));
 
     }

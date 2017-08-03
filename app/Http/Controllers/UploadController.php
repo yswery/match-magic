@@ -10,9 +10,10 @@ class UploadController extends Controller
 {
     public function uploadReceipt(Request $request)
     {
-        $file  = $request->file('receipt');
-        $slack = new Slack();
-        $slack->sendReceipt('@hanna', $file);
+        $file    = $request->file('receipt');
+        $comment = $request->input('comment');
+        $slack   = new Slack();
+        $slack->sendReceipt('@hanna', $file, $comment);
 
         return redirect('/');
     }

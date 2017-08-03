@@ -61,14 +61,15 @@ class Slack
         return json_decode($this->doCurl($apiUrl, ['channel' => $channel, 'text' => $message]));
     }
 
-    public function sendReceipt($person, $file)
+    public function sendReceipt($person, $file, $comment)
     {
         $apiUrl = 'https://slack.com/api/files.upload';
         return json_decode($this->doCurl($apiUrl, [
-            'channels' => $person,
-            'filename' => $file->getClientOriginalName(),
-            'file'     => new \CURLFile($file->getPathname()),
-            'title'    => 'Another date receipt, from Cupid with love <3',
+            'channels'        => $person,
+            'filename'        => $file->getClientOriginalName(),
+            'file'            => new \CURLFile($file->getPathname()),
+            'title'           => 'Another date receipt, from Cupid with love <3',
+            'initial_comment' => $comment,
         ]));
 
     }

@@ -16,7 +16,6 @@ class Slack
     {
         $postData['token']        = $this->token;
         $postData['as_user']      = 'true';
-        $postData['unfurl_links'] = 'false';
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -37,7 +36,7 @@ class Slack
         return $server_output;
     }
 
-    public function sendPrivateMessage($members, $message)
+    public function sendPrivateMessage($members, $message, $unfurl = true)
     {
         $apiUrl = 'https://slack.com/api/mpim.open';
 
@@ -48,17 +47,21 @@ class Slack
 
         $userSlackIds = implode(',', $userSlackIds);
 
-        $response = json_decode($this->doCurl($apiUrl, ['users' => $userSlackIds]));
+        $response = json_decode($this->doCurl($apiUrl, ['users' => $userSlackIds], $headers = []));
         $groupId  = $response->group->id;
 
-        return $this->sendToChannel($groupId, $message);
+        return $this->sendToChannel($groupId, $message, $unfurl);
     }
 
-    public function sendToChannel($channel, $message)
+    public function sendToChannel($channel, $message, $unfurl = true)
     {
         // Send the message
         $apiUrl = 'https://slack.com/api/chat.postMessage';
-        return json_decode($this->doCurl($apiUrl, ['channel' => $channel, 'text' => $message]));
+        return json_decode($this->doCurl($apiUrl, [
+            'channel'      => $channel,
+            'text'         => $message,
+            'unfurl_links' => $unfurl ? 'true' : 'false',
+        ]));
     }
 
     public function sendReceipt($person, $file, $comment)

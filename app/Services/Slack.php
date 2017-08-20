@@ -47,7 +47,7 @@ class Slack
 
         $userSlackIds = implode(',', $userSlackIds);
 
-        $response = json_decode($this->doCurl($apiUrl, ['users' => $userSlackIds], $headers = []));
+        $response = json_decode($this->doCurl($apiUrl, ['users' => $userSlackIds]));
         $groupId  = $response->group->id;
 
         return $this->sendToChannel($groupId, $message, $unfurl);

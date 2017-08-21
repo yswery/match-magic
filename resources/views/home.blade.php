@@ -25,7 +25,7 @@
                         <li data-src="{{ $memory->image }}"
                             data-sub-html="<h3>{{ $memory->description }}</h3>">
                             <a href="#section2">
-                                <img class="img-responsive" src="{{ $memory->image }}" width="150px" height="150px">
+                                <img class="img-responsive" src="{{ $memory->image }}">
                             </a>
                         </li>
                     @endforeach

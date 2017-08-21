@@ -352,18 +352,16 @@ input {
     float: left;
 }
 
-.gallery > ul > li a > img {
+.gallery > ul > li a > .thumbnail {
     -webkit-transition: -webkit-transform 0.15s ease 0s;
     -moz-transition: -moz-transform 0.15s ease 0s;
     -o-transition: -o-transform 0.15s ease 0s;
     transition: transform 0.15s ease 0s;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
-    max-height: 150px;
-    max-width: 150px;
 }
 
-.gallery > ul > li a:hover > img {
+.gallery > ul > li a:hover > .thumbnail {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
 }

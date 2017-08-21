@@ -20,9 +20,7 @@
   },
   "dependencies": {
     "es6-promise": "^3.2.1",
-    "flickity": "^2.0.3",
     "lg-fullscreen.js": "^1.0.0",
-    "lg-pager.js": "^1.0.0",
     "lg-thumbnail": "^1.1.0",
     "lg-zoom.js": "^1.0.1",
     "lightgallery.js": "^1.0.1"

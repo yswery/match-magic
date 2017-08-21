@@ -23,9 +23,9 @@
                 <ul id="lightgallery">
                     @foreach($memories as $memory)
                         <li data-src="{{ $memory->image }}"
-                            data-sub-html="<p>{{ $memory->description }}</p>">
+                            data-sub-html="<h3>{{ $memory->description }}</h3>">
                             <a href="#section2">
-                                <img class="img-responsive" src="{{ $memory->image }}">
+                                <img class="img-responsive" src="{{ $memory->image }}" width="150px" height="150px">
                             </a>
                         </li>
                     @endforeach

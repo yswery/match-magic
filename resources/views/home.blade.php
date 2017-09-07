@@ -35,14 +35,33 @@
         </div>
     </div>
     <div id="section3" class="section" name="section3">
-        <div class="text-block-left">
-            <h2>Need date ideas?</h2>
-            <p>We’ve created a list of activities that are fun, quirky and classic. Some are simple, some are more
-                involved but all are decidedly not-lame. Because you guys are #relationshipgoals, you deserve to be
-                celebrated.</p>
-            <a href="#section3" class="btn">Coming soon<span class="bg-effect"></span></a>
+        <div class="text-block-center">
+
+            <div class="Headline">
+                <h1>Need date ideas?</h1>
+
+            </div>
+            <div class="text-container">
+                <h2>Food 🍕</h2>
+                <p>{{ $food->description }}</p>
+
+            </div>
+
+            <div class="text-container">
+                <h2>Activity 🚲</h2>
+                <p>{{ $activity->description }}</p>
+            </div>
+
+            <div class="text-container">
+                <h2>Random 👑</h2>
+                <p>{{ $random->description }}</p>
+            </div>
+
         </div>
-        <div class="image-right"></div>
+        <div class="text-block-center">
+
+            <a class="shuffle-btn" href=".">SHUFFLE!</a>
+        </div>
     </div>
     <div id="section4" class="section" name="section4">
         <div class="text-block-center">

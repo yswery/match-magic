@@ -1,4 +1,11 @@
 {
   "/js/app.js": "/js/app.js",
-  "/css/app.css": "/css/app.css"
+  "/css/app.css": "/css/app.css",
+  "/js/gallery.js": "/js/gallery.js",
+  "/js/lightgallery.min.js": "/js/lightgallery.min.js",
+  "/js/lg-zoom.min.js": "/js/lg-zoom.min.js",
+  "/js/lg-fullscreen.min.js": "/js/lg-fullscreen.min.js",
+  "/js/selectors.js": "/js/selectors.js",
+  "/js/format.js": "/js/format.js",
+  "/css/lightgallery.min.css": "/css/lightgallery.min.css"
 }

@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\pickPairs::class,
         \App\Console\Commands\hypeHype::class,
         \App\Console\Commands\reminder::class,
+        \App\Console\Commands\BirthdayWishes::class,
     ];
 
     /**

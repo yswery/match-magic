@@ -10,7 +10,7 @@
             <p>{{ $food->description }}</p>
 
             @if(empty($food->url) === false)
-                <a href="{{ $food->url }}" target="_blank">See more...</a>
+                <a href="{{ $food->url }}" target="_blank">🌎 More details</a>
             @endif
 
         </div>
@@ -20,7 +20,7 @@
             <p>{{ $activity->description }}</p>
 
             @if(empty($activity->url) === false)
-                <a href="{{ $activity->url }}" target="_blank">See more...</a>
+                <a href="{{ $activity->url }}" target="_blank">🌍 More details</a>
             @endif
         </div>
 
@@ -29,7 +29,7 @@
             <p>{{ $random->description }}</p>
 
             @if(empty($random->url) === false)
-                <a href="{{ $random->url }}" target="_blank">See more...</a>
+                <a href="{{ $random->url }}" target="_blank">🌏 More details</a>
             @endif
         </div>
 

@@ -52,8 +52,8 @@
 <body>
     <div id="wrapper">
         @include('partials/header')
-        @section('body')
-        @endsection
+        @yield('body')
+        @include('partials/footer')
     </div>
 
     <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->

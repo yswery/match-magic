@@ -678,10 +678,20 @@ body{
 
 #section3 a{
     text-decoration: none;
-    color: white;
+    color: #FD5068;
 }
 
-.shuffle-btn{
+#section3 a:hover {
+    text-decoration: wavy;
+    color: #FD5090;
+}
+
+#section3 .shuffle-btn,
+#section3 .shuffle-btn:hover {
+    color: #FFFFFF;
+}
+
+.shuffle-btn {
     width: 195px;
     background-color: #FD5068;
     height: 45px;
@@ -696,7 +706,7 @@ body{
     transition: background-color 0.2s ease;
 }
 
-.shuffle-btn:hover{
+.shuffle-btn:hover {
     background-color: #FD5090;
 }
 

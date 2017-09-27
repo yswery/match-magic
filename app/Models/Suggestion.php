@@ -8,4 +8,9 @@ class Suggestion extends Model
 {
     protected $table = 'suggestions';
 
+    protected $fillable = [
+        'category',
+        'description',
+        'url'
+    ];
 }

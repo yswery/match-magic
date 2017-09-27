@@ -27,7 +27,7 @@ class AddBirthdayField extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('members', function (Blueprint $table) {
             $table->dropColumn('birthday');
         });
     }
